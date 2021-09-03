@@ -35,10 +35,12 @@ public class homeWork {
 
         WebElement search=driver.findElement(By.id("did_submit"));
         search.click();
-        WebElement cancel=driver.findElement(By.className("_42ft _4jy0 _9nq1 textPadding20px _4jy3 _517h _51sy"));
-         cancel.click();
 
+Thread.sleep(1000);
+WebElement cancel=driver.findElement(By.linkText("Cancel"));
+cancel.click();
+Thread.sleep(1000);
+driver.quit();
 
-         driver.navigate().back();
     }
 }
