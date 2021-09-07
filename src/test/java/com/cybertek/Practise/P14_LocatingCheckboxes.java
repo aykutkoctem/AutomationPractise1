@@ -1,4 +1,4 @@
-package com.cybertek.day03_locate_by_tag_class_getat;
+package com.cybertek.Practise;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -24,5 +24,10 @@ public class P14_LocatingCheckboxes {
 
         checkBox2.click();
         System.out.println("checkBox2.getAttribute(\"checked\") = " + checkBox2.getAttribute("checked"));
+        if (!checkbox1.isSelected()){
+            checkbox1.click();
+        }else {
+            System.out.println("checkbox 1 is already selected");
+        }
     }
 }

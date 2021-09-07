@@ -1,4 +1,4 @@
-package com.cybertek.day03_locate_by_tag_class_getat;
+package com.cybertek.Practise;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
