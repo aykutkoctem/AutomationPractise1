@@ -10,11 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LogInFormPractice {
 
     WebDriver driver ;
-
+    // setting up all driver stuff here directly in @BeforeEach method
     @BeforeEach
     public void setupWebDriver(){
         WebDriverManager.chromedriver().setup();
@@ -26,8 +27,9 @@ public class LogInFormPractice {
     public void closeBrowser(){
         driver.quit();
     }
+
     @Test
-    public void testLogin(){
+    public void testLogin() throws InterruptedException {
 
         driver.get("http://practice.cybertekschool.com/login");
 
@@ -46,11 +48,26 @@ public class LogInFormPractice {
 
         //div[@id='flash']
         WebElement successMsg = driver.findElement(By.xpath(" //div[@id='flash']"));
-
+        // assertion
         String expectedResult = "You logged into a secure area!" ;
-        assertEquals(expectedResult , successMsg.getText() );
+//        assertEquals(expectedResult , successMsg.getText() );
+        assertTrue( successMsg.getText().startsWith(expectedResult) );
+
+        //div[ contains( text() , 'You logged into a secure area!') ]
+        // use isDisplay() method to check an element is displayed on the screen
+        // It's only used for an element that you have already identified
+
+        System.out.println("successMsg.isDisplayed() = " + successMsg.isDisplayed());
+
+        Thread.sleep(1000);
+        String xpathStr = "//div[ contains( text() , 'You logged into a secure area!') ]" ;
+        WebElement successMsg2 = driver.findElement(By.xpath(xpathStr)) ;
+
+        assertTrue(   successMsg2.isDisplayed()  );
+
 
     }
-}
 
+
+}
 
