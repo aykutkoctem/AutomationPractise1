@@ -78,7 +78,7 @@ public class ActionClassTest extends TestBase {
     actions.dragAndDrop(smallCircle,biggerCircle).perform();
     BrowserUtil.waitfor(2);
 
-        assertEquals("You did great!|", biggerCircle.getText() );
+        assertEquals("You did great!", biggerCircle.getText() );
 }
 
     @Test
@@ -104,6 +104,33 @@ public class ActionClassTest extends TestBase {
 
     @Test
     public void testDoubleClick(){
-        
+
+        driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ondblclick");
+        BrowserUtil.waitfor(2);
+        // both elements are under the frame , so switch into it first
+        driver.switchTo().frame("iframeResult");
+        WebElement pElm1 =
+                driver.findElement(By.xpath("//p[.='Double-click this paragraph to trigger a function.']"));
+        Actions actions = new Actions(driver) ;
+        actions.doubleClick(pElm1).perform(); // this is how we double click
+
+        BrowserUtil.waitfor(2);
+    }
+
+    @Test
+    public void testRightClick(){
+        // navigate to below url
+        driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oncontextmenu");
+        // locate the yellow area
+        // locate the yellow area : css selector div[contextmenu='mymenu']
+        driver.switchTo().frame("iframeResult");
+        WebElement yellowArea=driver.findElement(By.cssSelector("div[contextmenu='mymenu']"));
+
+        // right-click on that area using Actions class method
+
+        Actions actions=new Actions(driver);
+        actions.contextClick(yellowArea).perform();
+        // close the alert that showed up after
+        BrowserUtil.waitfor(2);
     }
 }
