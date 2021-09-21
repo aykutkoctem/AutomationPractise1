@@ -130,6 +130,7 @@ public class ActionClassTest extends TestBase {
 
         Actions actions=new Actions(driver);
         actions.contextClick(yellowArea).perform();
+        driver.switchTo().alert().accept();
         // close the alert that showed up after
         BrowserUtil.waitfor(2);
     }
