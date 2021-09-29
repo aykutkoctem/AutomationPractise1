@@ -10,9 +10,14 @@ public class SinlgletonPractice {
 
        // Singleton s2=new Singleton();
        // s2.word="efd";
-        Singleton.getObj();
-        Singleton.getObj();
-        Singleton.getObj();
-        Singleton.getObj();
+       // Singleton.getObj();
+       // Singleton.getObj();
+       // Singleton.getObj();
+      //  Singleton.getObj();
+    }
+
+    @Test
+    public void testOutDriver(){
+        Driver.getDriver();
     }
 }

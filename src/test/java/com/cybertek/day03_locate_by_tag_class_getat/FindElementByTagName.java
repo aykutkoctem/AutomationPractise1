@@ -32,6 +32,6 @@ public class FindElementByTagName {
         System.out.println("firstH1TagElm.getText() = " + firstH1TagElm.getText());
 
 
-
+driver.quit();
     }
 }

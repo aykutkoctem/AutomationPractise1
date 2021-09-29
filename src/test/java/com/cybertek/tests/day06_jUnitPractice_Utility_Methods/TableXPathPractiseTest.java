@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TableXPathPractiseTest extends TestBase {
@@ -13,6 +15,12 @@ public class TableXPathPractiseTest extends TestBase {
     public void testTableData(){
 
         driver.get("http://practice.cybertekschool.com/tables");
+
+        List<WebElement> allFirst=driver.findElements(By.xpath("//table[@id='table1']//tr/th"));
+
+        for (WebElement eachElement : allFirst) {
+            System.out.println("eachElement.getText() = " + eachElement.getText());
+        }
 
         //table[@id='table1']//tr[4]/td[2]
         // print the text of 4th column and second row

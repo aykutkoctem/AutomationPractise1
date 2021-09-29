@@ -1,5 +1,4 @@
 package com.cybertek.utility;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +20,7 @@ public class WebDriverFactory {
 
         WebDriver driver ;
 
-        switch (browserName.toLowerCase().trim()){
+        switch (browserName.toLowerCase() ){
             case "chrome" :
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();

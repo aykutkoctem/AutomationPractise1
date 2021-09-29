@@ -26,11 +26,11 @@ public class Singleton {
     // if obj was not initially give value
     // the create object and give value
     if(obj == null) {
-      System.out.println("Object has not been created yet, creating one now");
+    //  System.out.println("Object has not been created yet, creating one now");
       obj = new Singleton();
       return obj ;
     }else{
-      System.out.println("You already have object , use that existing object");
+     // System.out.println("You already have object , use that existing object");
       return obj ;
     }
 

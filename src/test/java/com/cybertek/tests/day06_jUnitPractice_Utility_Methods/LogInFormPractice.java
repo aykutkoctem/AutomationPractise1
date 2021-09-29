@@ -25,7 +25,7 @@ public class LogInFormPractice {
 
     @AfterEach
     public void closeBrowser(){
-        driver.quit();
+      //  driver.quit();
     }
 
     @Test
